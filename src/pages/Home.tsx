@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Github, Mail, FileDown, ArrowUpRight, Linkedin } from "lucide-react";
 import { groups, type Project } from "@/lib/projects";
-import profileImg from "@/assets/profile-placeholder.svg";
+import profileImg from "@/assets/portfolioPicture.jpg";
 
 const NAV = [
   { href: "#about", label: "About", id: "about" },
@@ -83,10 +83,12 @@ function Nav({ active }: { active: string }) {
             })}
           </ul>
           <a
-            href="/resume.pdf"
+            href="/portfolio/KultumL_resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
           >
-            Résumé <FileDown className="h-3.5 w-3.5" />
+            Resume <FileDown className="h-3.5 w-3.5" />
           </a>
         </nav>
       </div>
@@ -148,13 +150,12 @@ function About() {
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-primary">// About</p>
             <h2 className="mt-4 font-display text-4xl font-bold md:text-5xl">
-              I like building things that<span className="text-aurora"> think and feel</span>.
+              Building for a more accessible and efficient world.<span className="text-aurora"> think and feel</span>.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              I'm a developer who treats every project as a small research lab. Whether
-              I'm wrangling messy datasets, shipping a full-stack product, or studying
-              how someone uses a brand-new interface, I'm chasing the same question —
-              <span className="text-foreground"> how do we make technology feel more human?</span>
+              Hi, I’m Kultum, a recent graduate of Emory University with a bachelor’s degree in Computer Science and a minor in Economics.
+              I’m passionate about using my background to solve complex problems, take on new challenges, and build solutions that create meaningful impact.
+              I’m especially motivated by work that improves access, expands opportunity, and supports underrepresented communities.
             </p>
           </div>
           <div className="relative">
@@ -198,7 +199,7 @@ function ProjectCard({ project }: { project: Project }) {
       to={`/projects/${project.slug}`}
       className="group relative flex flex-col overflow-hidden rounded-2xl glass text-left transition duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_40px_-10px_var(--aurora-violet)]"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[16/9] overflow-hidden">
         <img src={project.image} alt={project.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
       </div>
@@ -229,17 +230,17 @@ function Contact() {
             Get in <span className="text-aurora">touch</span>.
           </h2>
           <div className="relative mt-10 flex flex-wrap justify-center gap-3">
-            <a href="mailto:hello@example.com" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:shadow-[0_0_30px_var(--aurora-mint)]">
-              <Mail className="h-4 w-4" /> hello@example.com
+            <a href="mailto:klhabaik@gmail.com" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition hover:shadow-[0_0_30px_var(--aurora-mint)]">
+              <Mail className="h-4 w-4" /> klhabaik@gmail.com
             </a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
+            <a href="https://github.com/KultumL/Kultum-s-Personal-Projects" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
               <Github className="h-4 w-4" /> GitHub
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
+            <a href="https://linkedin.com/in/kultum2026" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
               <Linkedin className="h-4 w-4" /> LinkedIn
             </a>
-            <a href="/resume.pdf" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
-              <FileDown className="h-4 w-4" /> Résumé
+            <a href="/portfolio/KultumL_resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
+              <FileDown className="h-4 w-4" /> Resume
             </a>
           </div>
         </div>

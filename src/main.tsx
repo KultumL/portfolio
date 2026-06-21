@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects/:slug" element={<ProjectPage />} />
