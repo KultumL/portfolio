@@ -83,7 +83,7 @@ function Nav({ active }: { active: string }) {
             })}
           </ul>
           <a
-            href="/portfolio/KultumL_resume.pdf"
+            href="/KultumL_resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
@@ -239,7 +239,7 @@ function Contact() {
             <a href="https://linkedin.com/in/kultum2026" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
               <Linkedin className="h-4 w-4" /> LinkedIn
             </a>
-            <a href="/portfolio/KultumL_resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
+            <a href="/KultumL_resume.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-medium transition hover:bg-white/10">
               <FileDown className="h-4 w-4" /> Resume
             </a>
           </div>

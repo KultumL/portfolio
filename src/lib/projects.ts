@@ -251,7 +251,7 @@ export const groups: Group[] = [
         undefined,                                                                              // demo (no live site)
         [projArtistDecline, projArtistFig1, projArtistFig2, projArtistFig3, projArtistFig6, projArtistFig7],
         undefined,                                                                              // imageAspect
-        "/portfolio/project_report.pdf"                                                                   // paper
+        "/project_report.pdf"                                                                   // paper
       ),
     ],
   },
