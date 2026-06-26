@@ -10,6 +10,15 @@ import projScreenshot3 from "@/assets/company-insider-3.png";
 import projScreenshot4 from "@/assets/company-insider-4.png";
 import projScreenshot5 from "@/assets/company-insider-5.png";
 
+import projMedTrace from "@/assets/Medtrace-1.png";
+import projMedTraceHome from "@/assets/Medtrace-6.png";
+import projMedTraceCheckin from "@/assets/Medtrace-2.png";
+import projMedTraceMeds from "@/assets/Medtrace-3.png";
+import projMedTraceReport from "@/assets/Medtrace-4.png";
+import projMedTraceReport2 from "@/assets/Medtrace-5.png";
+import projMedTraceCaregiver2 from "@/assets/Medtrace-8.png";
+import projMedTraceCaregiver from "@/assets/Medtrace-7.png";
+
 import projDueAble from "@/assets/Dueable-thumb.png"; // card thumbnail
 import projPipelineDueAble from "@/assets/dueable-pipeline.jpeg";    // What I Built diagram
 import projDueAbleScreenshot1 from "@/assets/DueAble-1.png";
@@ -34,23 +43,23 @@ import projTailorProd1 from "@/assets/TailorMe-4.jpg";
 import projTailorProd2 from "@/assets/TailorMe-5.jpg";
 import projTailorProd3 from "@/assets/TailorMe-6.jpg";
 
-import projNPGeorgia from "@/assets/NP-Georgia-thumb.png";        // card thumbnail (use that dashboard screenshot you shared)
-import projNPScreenshot1 from "@/assets/NP-Georgia-1.png";        // NP count map
-import projNPScreenshot2 from "@/assets/NP-Georgia-2.png";        // NP density map
-import projNPScreenshot3 from "@/assets/NP-Georgia-3.png";        // Doctor:NP ratio map
+import projNPGeorgia from "@/assets/NP-Georgia-thumb.png";       
+import projNPScreenshot1 from "@/assets/NP-Georgia-1.png";       
+import projNPScreenshot2 from "@/assets/NP-Georgia-2.png";        
+import projNPScreenshot3 from "@/assets/NP-Georgia-3.png";        
 
 import projNPScreenshot5 from "@/assets/NP-Georgia-5.png"; 
-import projNPScreenshot6 from "@/assets/NP-Georgia-6.png";         // a scatterplot
+import projNPScreenshot6 from "@/assets/NP-Georgia-6.png";         
 import projNPScreenshot7 from "@/assets/NP-Georgia-7.png"; 
 import projNPScreenshot8 from "@/assets/NP-Georgia-8.png"; 
 
-import projArtistDecline from "@/assets/artist-decline-thumb.png";    // slide 1 (purple title slide)
-import projArtistFig1 from "@/assets/artist-decline-fig1.png";        // cluster heatmap
-import projArtistFig2 from "@/assets/artist-decline-fig2.png";        // archetype trajectories 1-4
+import projArtistDecline from "@/assets/artist-decline-thumb.png";    
+import projArtistFig1 from "@/assets/artist-decline-fig1.png";        
+import projArtistFig2 from "@/assets/artist-decline-fig2.png";        
 import projArtistFig3 from "@/assets/artist-decline-fig3.png";
-import projArtistFig6 from "@/assets/artist-decline-fig6.png";        // PR curves
-import projArtistFig7 from "@/assets/artist-decline-fig7.png";        // confusion matrices
-import projArtistFig8 from "@/assets/artist-decline-fig8.png";        // feature importance
+import projArtistFig6 from "@/assets/artist-decline-fig6.png";       
+import projArtistFig7 from "@/assets/artist-decline-fig7.png";       
+import projArtistFig8 from "@/assets/artist-decline-fig8.png";        
 import projArtistFig9 from "@/assets/artist-decline-fig9.png";
 
 export type Section = {
@@ -149,7 +158,28 @@ export const groups: Group[] = [
         "https://companyinsider-six.vercel.app",
         [projCompanyInsider,projScreenshot1, projScreenshot2, projScreenshot3, projScreenshot4, projScreenshot5]
       ),
-
+      make("fullstack", "Full-Stack Projects", "medtrace", "MedTrace",
+        "A medication and symptom tracker with a caregiver mode and an AI layer that summarizes a patient's own health data into plain-English reports, while never diagnosing or advising.",
+        ["React Native", "Expo", "Java 25", "Spring Boot", "PostgreSQL", "pgvector", "Gemini API", "OpenFDA", "Resend", "JWT"],
+        projMedTrace,
+        "https://github.com/KultumL/Kultum-s-Personal-Projects/tree/main/MedTrace",
+        [
+          {
+            title: "Overview",
+            body: "MedTrace helps patients log medications and daily symptoms, uses real drug information from the OpenFDA label API, and generates weekly, monthly, and yearly PDF reports they can bring to an appointment. A patient-initiated caregiver mode allows someone monitor the patient's data and, with permission, enter check-ins and doses on their behalf, with every entry attributed to whoever recorded it. The app is built around one principle: it organizes and communicates health information, it never diagnoses or recommends. Patients log doses per-medication schedules, the app computes each dose as taken, upcoming, overdue, or missed at read time, and an AI layer turns the patient's own entries into summaries under strict guardrails.",
+          },
+          {
+            title: "What I Built",
+            body: [
+              "I built the full stack with a Java 25 / Spring Boot 4.1 backend and a React Native / Expo client that runs on mobile and web. On the backend, I used a layered architecture with stateless JWT authentication, role-based access for patient and caregiver accounts, and a global exception handler for consistent JSON responses. I also integrated the OpenFDA label API so each medication is automatically enriched with its purpose, warnings, and side effects, and refreshed whenever a medication is renamed.",
+              "I designed the AI layer to stay explainable instead of relying on the model to make hidden judgments. Trend detection for patterns like rising pain, low mood, and missed-dose clusters runs in application code, while Gemini is only used to turn those findings into clear summaries. I also built a RAG pipeline with pgvector and Gemini embeddings to ground outputs in patient-specific FDA drug data, added caregiver permissions and attribution controls, triggered missed-dose email alerts, and generated PDF reports with adherence calculations that exclude doses that are not yet due.",
+            ],
+            //image: projMedTraceArchitecture,
+          },
+        ],
+        "https://medtrace.example.com",
+        [projMedTrace, projMedTraceHome, projMedTraceCheckin, projMedTraceMeds, projMedTraceReport,projMedTraceReport2, projMedTraceCaregiver, projMedTraceCaregiver2]
+      ),
 
       make("fullstack", "Full-Stack Projects", "dueable", "DueAble",
         "An academic planner that automatically turns syllabus deadlines into calendar events, giving students a simpler way to stay organized without entering everything by hand.",
