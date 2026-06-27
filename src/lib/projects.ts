@@ -177,7 +177,7 @@ export const groups: Group[] = [
             //image: projMedTraceArchitecture,
           },
         ],
-        "https://medtrace.example.com",
+        "https://medtrace-red.vercel.app",
         [projMedTrace, projMedTraceHome, projMedTraceCheckin, projMedTraceMeds, projMedTraceReport,projMedTraceReport2, projMedTraceCaregiver, projMedTraceCaregiver2]
       ),
 
